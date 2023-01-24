@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+    color: white;
+}
+
+:root {
+    --text-color: white;
+    --background-gradient: linear-gradient(180deg, #242424 0%, #1F1F1F 100%);
+    --background-color-sections: #242424;
+    --accent-color: #0075FF;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: var(--background-gradient);
+}
+
+/*#region setup*/
+
+.btn {
+    background-color: var(--accent-color);
+    padding: .6em 1.5em;
+    border-radius: .5em;
+}
+
+.btn:hover {
+    background-color: #3a94fb;
+}
+
+.accent-clr {
+    color: var(--accent-color);
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: .8s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*#endregion*/
+
+/*#region hero*/
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../img/Background/hütten_schnee.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 4.5em;
+}
+
+@media (min-width: 600px) {
+    .hero h1 {
+        font-size: 10vw;
+    }
+}
+
+/*#region Header*/
+nav .normal {
+    display: none;
+    visibility: hidden;
+}
+
+nav ul a:hover{
+    color: #0075FF;
+}
+
+nav a {
+    transition: all .2s ease;
+}
+
+nav .phone {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: .8em;
+}
+
+nav .hidden {
+    display: none;
+}
+
+#hamburger {
+    height: 2em;
+}
+
+.popout {
+    list-style: none;
+    font-size: 1.5em;
+}
+
+.popout :last-child a {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.popout a {
+    text-decoration: none;
+}
+
+.menu {
+    align-self: center;
+    text-align: center;
+}
+
+.popout li {
+    padding: .4em 2em;
+}
+
+@media (min-width: 600px) {
+    nav .phone {
+        display: none;
+        visibility: hidden;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .phone li {
+        display: none;
+    }
+
+    nav .normal {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: space-between;
+        padding: 1em 2em;
+    }
+
+    nav{
+        display: flex;
+    }
+
+    .normal li {
+        display: inline-block;
+        margin: 0 0 0 1em;
+    }
+
+    .normal a {
+        text-decoration: none;
+    }
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region meine-erfahrungen*/
+
+.meine-erfahrungen {
+    padding: .8em;
+}
+
+.meine-erfahrungen ul {
+    list-style: none;
+}
+
+.meine-erfahrungen h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: .6em;
+    margin-top: .4em;
+}
+
+.card {
+    background-color: white;
+    padding: 1.3em;
+    line-height: 1.6em;
+    border-radius: .4em;
+    margin-bottom: 2em;
+    min-height: 18em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8em;
+}
+
+.card p, .card h3 {
+    color: black;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card p {
+    margin-bottom: 1.5em;
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+@media (min-width: 400px) {
+    .card {
+        font-size: 3.8vw;
+    }
+
+    .meine-erfahrungen h2 {
+        font-size: 6vw;
+    }
+}
+
+@media (min-width: 600px) {
+    .meine-erfahrungen h2 {
+        font-size: 2.5em;
+    }
+
+    .meine-erfahrungen ul {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .card {
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 1000px) {
+    .card {
+        font-size: 1.2em;
+    }
+}
+
+/*#endregion*/
+
+/*#region ueber-mich*/
+
+.ueber-mich {
+    padding: 1em;
+    background-color: var(--background-color-sections);
+    line-height: 1.6em;
+}
+
+.ueber-mich img {
+    display: none;
+}
+
+.ueber-mich h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+
+@media (min-width: 600px) {
+    .ueber-mich .wrapper {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 950px) {
+    .ueber-mich img {
+        display: block;
+        border-radius: 1em;
+    }
+
+    .ueber-mich .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em;
+    }
+
+    .ueber-mich {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*#endregion*/
+
+/*#region coding*/
+
+
+
+.coding {
+    margin-top: 2em;
+    background-color: var(--background-color-sections);
+    padding: 1em;
+}
+
+.coding .lower {
+    margin-top: 1.5em;
+}
+
+@media (min-width: 600px) {
+    .coding .wrapper {
+        max-width: 800px;
+    }
+
+    .coding {
+        display: flex;
+        justify-content: center;
+        padding: 2em;
+    }
+
+    .coding .lower {
+        margin-top: 5em;
+    }
+}
+
+/*#endregion*/
+
+/*#region gallery*/
+
+.gallerie img {
+    max-width: 100%;
+}
+
+.gallerie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.gallerie a {
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 850px) {
+    .gallerie {
+        display: grid;
+
+        grid-template-columns: 
+            1fr 1fr 1fr 1fr
+        ;
+
+        grid-template-rows: 
+            1fr 1fr 1fr
+        ;
+
+        width: 100%; 
+        margin-left: auto; 
+        margin-right: auto;
+
+        justify-content: center;
+
+        max-width: 950px;
+    }
+}
+
+/*#endregion*/
+
+/*#region footer*/
+
+footer {
+    background-color: black;
+    margin-top: 4em;
+    display: grid;
+    place-items: center;
+    padding: 1em;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    transition: all .15s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+@media (min-width: 600px){
+    footer {
+        min-height: 10vh;
+    }
+    
+    footer ul {
+        flex-direction: row;
+        gap: 10%;
+    }
+}
+
+/*#endregion*/
